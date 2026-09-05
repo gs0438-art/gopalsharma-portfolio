@@ -1,7 +1,6 @@
 import { MapPin, Phone, Mail, Send, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { personalInfo } from '@/data/resume';
-import { supabase } from '@/lib/supabase';
 import { Reveal } from '@/hooks/useReveal';
 import { MagneticButton } from '@/components/MagneticButton';
 
@@ -19,13 +18,12 @@ export default function Contact() {
     setErrorMsg('');
 
     try {
-      const { error } = await supabase.from('contact_messages').insert({
-        name: form.name.trim(),
-        email: form.email.trim(),
-        message: form.message.trim(),
-      });
+  const subject = encodeURIComponent(Portfolio enquiry from ${form.name.trim()});
+  const body = encodeURIComponent(
+    Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}
+  );
 
-      if (error) throw error;
+  window.location.href = mailto:${personalInfo.email}?subject=${subject}&body=${body};
 
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
