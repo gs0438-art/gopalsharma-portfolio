@@ -23,7 +23,7 @@ export default function Contact() {
     `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}`
   );
 
-  window.location.href = mailto:${personalInfo.email}?subject=${subject}&body=${body};
+  window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
 
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
