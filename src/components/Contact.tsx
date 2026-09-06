@@ -18,9 +18,9 @@ export default function Contact() {
     setErrorMsg('');
 
     try {
-  const subject = encodeURIComponent(Portfolio enquiry from ${form.name.trim()});
+  const subject = encodeURIComponent(`Portfolio enquiry from ${form.name.trim()}`);
   const body = encodeURIComponent(
-    Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}
+    `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}`
   );
 
   window.location.href = mailto:${personalInfo.email}?subject=${subject}&body=${body};
